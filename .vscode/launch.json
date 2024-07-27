@@ -1,0 +1,59 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'dcosanalyzer'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=dcosanalyzer",
+                    "--package=dcosanalyzer"
+                ],
+                "filter": {
+                    "name": "dcosanalyzer",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'dcosanalyzer'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=dcosanalyzer",
+                    "--package=dcosanalyzer"
+                ],
+                "filter": {
+                    "name": "dcosanalyzer",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "cargo run -p dcosanalyzer",
+            "program": "${workspaceFolder}/target/debug/dcosanalyzer",
+            "args": [
+                "../usdjpy-tick/download/usdjpy-tick-2007-01-01-2007-01-31.csv"
+            ],
+            "cwd": "${workspaceFolder}",
+            "sourceMap": {},
+            "sourceLanguages": [
+                "rust"
+            ]
+        }
+    ]
+}
