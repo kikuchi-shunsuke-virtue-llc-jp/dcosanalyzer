@@ -19,7 +19,9 @@
                     "kind": "bin"
                 }
             },
-            "args": [],
+            "args": [
+                "../usdjpy-tick/download/usdjpy-tick-2007-01-01-2007-01-31.csv"
+            ],
             "cwd": "${workspaceFolder}"
         },
         {

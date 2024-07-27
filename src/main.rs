@@ -11,8 +11,12 @@ fn main() -> PolarsResult<()> {
                 .with_has_header(true)
                 .try_into_reader_with_file_path(Some(file_path.into()))?
                 .finish();
-
-    println!("{:?}", df);
+    if df.is_err() {
+        let err = df.err();
+        println!("error: {:?}", err);
+        return Err(err.unwrap());
+    }
+    println!("{:?}", df.ok().unwrap());
 
     Ok(())
 }
